@@ -42,17 +42,12 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <Section title={'Please leave feedback'}>
-                    <section>
-                        <Section
-                            countTotalFeedback={this.countTotalFeedback()}
-                        />
-                        <Button
-                            clickGood={this.clickGood}
-                            clickNeutral={this.clickNeutral}
-                            clickBad={this.clickBad}
-                        />
-                    </section>
+                <Section title={'Please leave feedback'} countTotalFeedback={this.countTotalFeedback()}>
+                    <Button
+                        clickGood={this.clickGood}
+                        clickNeutral={this.clickNeutral}
+                        clickBad={this.clickBad}
+                    />
                     <section>
                         <h2>Statistics</h2>
                         {this.countTotalFeedback() !== 0 ?
