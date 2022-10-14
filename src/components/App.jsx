@@ -42,31 +42,32 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <section>
-                    <Section
-                        countTotalFeedback={this.countTotalFeedback()}
-                    />
-                    <Button
-                        clickGood={this.clickGood}
-                        clickNeutral={this.clickNeutral}
-                        clickBad={this.clickBad}
-                    />
-                </section>
-                <section>
-                    <h2>Statistics</h2>
-                    {this.countTotalFeedback() !== 0 ?
-                        <>
-                            <Statistics
-                                good={this.state.good}
-                                neutral={this.state.neutral}
-                                bad={this.state.bad}
-                                countTotalFeedback={this.countTotalFeedback()}
-                                countPositiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}
-                            />
-                        </>
-                        : null}
-
-                </section>
+                <Section title={'Please leave feedback'}>
+                    <section>
+                        <Section
+                            countTotalFeedback={this.countTotalFeedback()}
+                        />
+                        <Button
+                            clickGood={this.clickGood}
+                            clickNeutral={this.clickNeutral}
+                            clickBad={this.clickBad}
+                        />
+                    </section>
+                    <section>
+                        <h2>Statistics</h2>
+                        {this.countTotalFeedback() !== 0 ?
+                            <>
+                                <Statistics
+                                    good={this.state.good}
+                                    neutral={this.state.neutral}
+                                    bad={this.state.bad}
+                                    countTotalFeedback={this.countTotalFeedback()}
+                                    countPositiveFeedbackPercentage={this.countPositiveFeedbackPercentage()}
+                                />
+                            </>
+                            : null}
+                    </section>
+                </Section>
             </div >
         )
     }
