@@ -1,9 +1,17 @@
-const Button = ({ clickGood, clickNeutral, clickBad }) => (
+import PropTypes from 'prop-types';
 
-    <div>
-        <button onClick={() => clickGood()}>Good</button>
-        <button onClick={() => clickNeutral()}>Neutral</button>
-        <button onClick={() => clickBad()}>Bad</button>
-    </div>
+
+const Button = ({ clickFeedback, options }) => (
+    <>
+        {options.map(item => (
+            <button key={item} onClick={() => clickFeedback(item)}>{item}</button>
+
+        ))}
+    </>
 )
+
+Button.protoType = {
+    options: PropTypes.arrayOf(PropTypes.string.isRequired),
+    clickGood: PropTypes.func.isRequired,
+}
 export default Button

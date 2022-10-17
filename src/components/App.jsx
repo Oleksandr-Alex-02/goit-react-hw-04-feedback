@@ -10,22 +10,8 @@ export default class App extends Component {
         bad: 0
     }
 
-    clickGood = () => {
-        this.setState(prevState => ({
-            good: prevState.good + 1,
-        }));
-    }
-
-    clickNeutral = () => {
-        this.setState(prevState => ({
-            neutral: prevState.neutral + 1,
-        }));
-    }
-
-    clickBad = () => {
-        this.setState(prevState => ({
-            bad: prevState.bad + 1,
-        }));
+    clickFeedback = option => {
+        this.setState(prevState => ({ [option]: prevState[option] + 1 }));
     }
 
     countTotalFeedback = () => {
@@ -44,9 +30,8 @@ export default class App extends Component {
             <div>
                 <Section title={'Please leave feedback'} countTotalFeedback={this.countTotalFeedback()}>
                     <Button
-                        clickGood={this.clickGood}
-                        clickNeutral={this.clickNeutral}
-                        clickBad={this.clickBad}
+                        clickFeedback={this.clickFeedback}
+                        options={Object.keys(this.state)}
                     />
                     <section>
                         <h2>Statistics</h2>
