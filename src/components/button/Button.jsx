@@ -10,7 +10,7 @@ const Button = ({ clickFeedback, options }) => (
     </>
 )
 
-Button.protoType = {
+Button.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string.isRequired),
     clickGood: PropTypes.func.isRequired,
 }
