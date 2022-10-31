@@ -12,6 +12,5 @@ const Button = ({ clickFeedback, options }) => (
 
 Button.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string.isRequired),
-    clickGood: PropTypes.func.isRequired,
 }
 export default Button
