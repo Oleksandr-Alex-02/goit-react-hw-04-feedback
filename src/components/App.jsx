@@ -36,9 +36,9 @@ export default function App() {
                     options={options}
                 />
                 <section>
-                    <h2>Statistics</h2>
-                    {countTotalFeedback !== 0 ?
+                    {TotalFeedback !== 0 ?
                         <>
+                            <h2>Statistics</h2>
                             <Statistics
                                 good={good}
                                 neutral={neutral}
